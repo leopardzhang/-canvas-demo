@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <canvas id="c" width="320" height="340"></canvas>
+    <script>
+    var c = document.querySelector('#c');
+    var ctx = c.getContext("2d");
+    var img = new Image();
+    img.onload = function(){
+    	console.log('img is onload');
+    	ctx.drawImage(img, 0, 0, c.width, c.height);
+            ctx.font="30px Verdana";
+            ctx.fillStyle = "white";
+            ctx.fillText('Hello word', 60, 120);
+            ctx.strokeStyle = "black";
+            ctx.strokeText('Hello word', 60, 120);
+    	var savedImage = c.toDataURL();
+    	window.open(savedImage);
+    }
+    img.src = 'images/9.jpg';
+    </script>
+    </body>
+</html>
